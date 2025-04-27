@@ -1,0 +1,17 @@
+{
+  "name": "irs_refund_checker",
+  "module": "index.ts",
+  "type": "module",
+  "bin": ".index.ts",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.5.0",
+    "puppeteer": "^24.7.2"
+  }
+}
