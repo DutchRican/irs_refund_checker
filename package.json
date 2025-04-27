@@ -2,7 +2,7 @@
   "name": "irs_refund_checker",
   "module": "index.ts",
   "type": "module",
-  "bin": ".index.ts",
+  "bin": "./index.ts",
   "private": true,
   "devDependencies": {
     "@types/bun": "latest"
