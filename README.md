@@ -8,7 +8,7 @@
 This prompts on the first run for your SSN, the tax year you are filing for, the filing status and the refund amount expected.
 A file is created in your homedir `~/.irs_refund`, so that on the next run you do not have to enter anything.
 
-Puppeteer will open a window ( headless is failing ) and will do the work for you.
+Puppeteer will run in headless mode and will do the work for you.
 The result will be shown when done.
 
 ### install

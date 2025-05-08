@@ -1,11 +1,36 @@
-
 import puppeteer from "puppeteer";
 import { firstTimeRun, readEnvFile } from "./fileUtils";
 
 let data = readEnvFile() || (await firstTimeRun());
 
-const browser = await puppeteer.launch({ headless: false });
+const browser = await puppeteer.launch({
+	headless: true,
+	args: ['--disable-blink-features=AutomationControlled'] // Tries to hide automation
+});
 const page = await browser.newPage();
+
+// Set a common user agent
+await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36');
+
+await page.evaluateOnNewDocument(() => {
+	// Pass a common webdriver test
+	Object.defineProperty(navigator, 'webdriver', {
+		get: () => false,
+	});
+	// Pass the Chrome test
+	// @ts-ignore
+	window.chrome = {
+		// @ts-ignore
+		runtime: {},
+	};
+	// Pass the permissions test
+	// @ts-ignore
+	navigator.permissions.query = (parameters) => (
+		parameters.name === 'notifications' ?
+			Promise.resolve({ state: Notification.permission }) :
+			Promise.reject(new Error('Unknown permission name'))
+	);
+});
 
 await page.goto('https://sa.www4.irs.gov/wmr/');
 // Set screen size.
