@@ -44,7 +44,7 @@ await page.locator('text/Submit').click();
 
 try {
 	// getting the step we are on to get the text
-	const step = await page.waitForSelector('li:has(> div.current-step)', { timeout: 2000 });
+	const step = await page.waitForSelector('li:has(> div.current-step)');
 	const txt = await step?.evaluate(el => el.textContent);
 	console.log(`current step: ${txt}`);
 
