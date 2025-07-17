@@ -36,9 +36,9 @@ await page.goto('https://sa.www4.irs.gov/wmr/');
 // Set screen size.
 await page.setViewport({ width: 1080, height: 1024 });
 
-await page.locator('input#ssnInputControl').fill(data.ssn);
+await page.locator('input[id="Social Security Number"]').fill(data.ssn);
 await page.locator(`input[data-testid="${data.taxYear}"]`).click();
-await page.locator(`#${data.filingStatus}`).click();
+await page.locator(`input[value="${data.filingStatus}"]`).click();
 await page.locator('input[name=refundAmountInput]').fill(data.amount);
 await page.locator('text/Submit').click();
 
