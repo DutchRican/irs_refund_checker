@@ -1,9 +1,13 @@
 {
   "name": "irs_refund_checker",
   "module": "index.ts",
+  "version": "1.0.0",
   "type": "module",
   "bin": {
     "irs_refund_checker": "./bin/index.js"
+  },
+  "scripts": {
+    "build": "bun build --shebang ./index.ts --target=node --outfile=bin/index.js"
   },
   "private": true,
   "devDependencies": {
