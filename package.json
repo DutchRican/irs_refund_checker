@@ -9,7 +9,7 @@
   "scripts": {
     "build": "bun build --shebang ./index.ts --target=node --outfile=bin/index.js"
   },
-  "private": true,
+  "private": false,
   "devDependencies": {
     "@types/bun": "latest"
   },
