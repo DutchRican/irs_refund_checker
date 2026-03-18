@@ -1,7 +1,7 @@
 {
   "name": "irs_refund_checker",
   "module": "index.ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "bin": {
     "irs_refund_checker": "./bin/index.js"
