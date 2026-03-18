@@ -11,6 +11,13 @@ A file is created in your homedir `~/.irs_refund`, so that on the next run you d
 Puppeteer will run in headless mode and will do the work for you.
 The result will be shown when done.
 
+### running with bunx
+
+```bash
+bunx irs_refund_checker
+```
+
+
 ### install
 
 To install dependencies:
